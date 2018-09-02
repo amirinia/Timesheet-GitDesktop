@@ -1,0 +1,43 @@
+﻿@model MyGigHub.Models.Timesheet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>جزییات</h2>
+
+<div>
+    <h4>Timesheet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("بازگشت", "Index")
+</p>

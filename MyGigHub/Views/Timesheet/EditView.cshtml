@@ -1,0 +1,69 @@
+﻿@model MyGigHub.ViewModel.TimesheetFormViewModel
+
+@{
+    ViewBag.Title = "EditView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>EditView</h2>
+
+
+@using (Html.BeginForm("EditView", "Timesheet"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new
+   {
+       @readonly = "readonly",
+       @class = "form-control",
+       @Value = @User.Identity.Name
+   })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.IP)
+        @Html.TextBoxFor(m => m.IP, new
+   {
+       @readonly = "readonly",
+       @class = "form-control",
+       @Value = Request.UserHostAddress
+   })
+        @Html.ValidationMessageFor(m => m.IP)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Date)
+        @Html.TextBoxFor(m => m.Date, new
+   {
+       @class = "form-control"
+            @*
+                @readonly = "readonly",
+                @Value = string.Format("{0} {1} {2}", DateTime.Now.Day, DateTime.Now.Month,DateTime.Now.Year)
+            *@
+   })
+        @Html.ValidationMessageFor(m => m.Date)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TimeStart)
+        @Html.TextBoxFor(m => m.TimeStart, new { @readonly = "readonly", @class = "form-control", @Value = string.Format("{0}:{1}", DateTime.Now.Hour, DateTime.Now.Minute) })
+        @Html.ValidationMessageFor(m => m.TimeStart)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.TimeEnd)
+        @Html.TextBoxFor(m => m.TimeEnd, new { disabled = "disabled", @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.TimeEnd)
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+
+}
+
+
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
