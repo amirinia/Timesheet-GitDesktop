@@ -4,8 +4,8 @@
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
-  padding-left: 15px;
   padding-right: 15px;
+  padding-left: 15px;
 }
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -62,7 +62,7 @@ span.field-validation-error {
 .navbar-inverse .notifications .badge {
   position: absolute;
   top: 8px;
-  right: -1px;
+  left: -1px;
   background: #a80a0a;
 }
 .navbar-inverse .navbar-nav > .open > a,
@@ -150,7 +150,7 @@ h6,
 .gigs > li .details {
   position: absolute;
   top: 0;
-  left: 70px;
+  right: 70px;
 }
 .gigs > li .details .artist {
   font-weight: bold;
@@ -171,7 +171,7 @@ h6,
 }
 .popover-notifications ul.notifications {
   list-style: none;
-  padding-left: 0;
+  padding-right: 0;
 }
 .popover-notifications ul.notifications > li {
   border-bottom: 1px solid #ddd;
@@ -189,4 +189,4 @@ h6,
 #searchGigs input {
   max-width: none;
 }
-/*# sourceMappingURL=site.css.map */
+/*# sourceMappingURL=site.rtl.css.map */
